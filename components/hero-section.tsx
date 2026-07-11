@@ -22,7 +22,7 @@ export function HeroSection() {
               Soluções de Engenharia de Alta Performance
             </h1>
             <p className="max-w-xl text-pretty text-base leading-relaxed text-white/70 md:text-lg">
-              Da concepção do projeto ao acompanhamento da obra, a Carvalho Engenharia entrega resultados com rigor
+              Da concepção do projeto ao acompanhamento da obra, a Nexxus Engenharia entrega resultados com rigor
               técnico, segurança e total conformidade legal para transformar a sua visão em estruturas sólidas.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">

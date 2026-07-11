@@ -16,7 +16,7 @@ export function AboutSection() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border shadow-lg">
               <Image
                 src="/images/project-commercial.png"
-                alt="Equipe de engenharia da Carvalho Engenharia em projeto"
+                alt="Equipe de engenharia da Nexxus Engenharia em projeto"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -32,7 +32,7 @@ export function AboutSection() {
               </h2>
             </div>
             <p className="text-pretty leading-relaxed text-muted-foreground">
-              A Carvalho Engenharia nasceu do compromisso de entregar soluções técnicas de excelência. Ao longo de mais
+              A Nexxus Engenharia nasceu do compromisso de entregar soluções técnicas de excelência. Ao longo de mais
               de uma década, consolidamos uma reputação sólida no mercado de engenharia civil, atendendo clientes
               residenciais, comerciais e de infraestrutura.
             </p>

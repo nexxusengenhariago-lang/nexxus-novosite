@@ -87,7 +87,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="h-4 w-4 shrink-0 text-primary" />
-                <span>contato@carvalhoengenharia.com.br</span>
+                <span>contato@nexxusengenharia.eng.br</span>
               </li>
             </ul>
           </div>
@@ -95,7 +95,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
           <p className="text-xs text-white/60">
-            &copy; {new Date().getFullYear()} Carvalho Engenharia. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Nexxus Engenharia. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-6 text-xs text-white/60">
             <Link href="#" className="transition-colors hover:text-primary">

@@ -30,7 +30,7 @@ export function ProjectsSection() {
           <span className="text-sm font-semibold uppercase tracking-wider text-primary">Cases</span>
           <h2 className="mt-2 text-balance text-3xl font-bold tracking-tight md:text-4xl">Projetos em Destaque</h2>
           <p className="mt-3 text-pretty text-muted-foreground">
-            Conheça alguns dos empreendimentos que ganharam vida com a expertise da Carvalho Engenharia.
+            Conheça alguns dos empreendimentos que ganharam vida com a expertise da Nexxus Engenharia.
           </p>
         </div>
 
