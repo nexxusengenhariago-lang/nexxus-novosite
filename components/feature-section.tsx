@@ -1,4 +1,7 @@
-import { DraftingCompass, FileCheck, ClipboardCheck, HardHat } from "lucide-react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { DraftingCompass, FileCheck, ClipboardCheck, HardHat, ArrowRight } from "lucide-react"
+import { whatsappLink } from "@/lib/site"
 
 const services = [
   {
@@ -6,24 +9,28 @@ const services = [
     title: "Projetos de Engenharia",
     description:
       "Projetos estruturais, arquitetônicos e complementares desenvolvidos com tecnologia BIM e precisão técnica.",
+    message: "Olá! Gostaria de um orçamento para um projeto de engenharia.",
   },
   {
     icon: FileCheck,
     title: "Alvarás e Regularização",
     description:
       "Aprovação de projetos junto aos órgãos competentes, regularização de imóveis e emissão de documentação legal.",
+    message: "Olá! Gostaria de um orçamento para alvará e regularização.",
   },
   {
     icon: ClipboardCheck,
     title: "Perícias e Vistorias",
     description:
       "Laudos técnicos, perícias judiciais e vistorias detalhadas para garantir a segurança e conformidade das edificações.",
+    message: "Olá! Gostaria de um orçamento para perícia ou vistoria.",
   },
   {
     icon: HardHat,
     title: "Acompanhamento de Obras",
     description:
       "Gerenciamento e fiscalização de obras com controle de cronograma, custos e qualidade em todas as etapas.",
+    message: "Olá! Gostaria de um orçamento para acompanhamento de obra.",
   },
 ]
 
@@ -49,7 +56,13 @@ export function FeatureSection() {
                 <service.icon className="h-6 w-6" />
               </div>
               <h3 className="text-lg font-semibold text-foreground">{service.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{service.description}</p>
+              <p className="flex-1 text-sm leading-relaxed text-muted-foreground">{service.description}</p>
+              <Button variant="link" asChild className="h-auto w-fit p-0 text-primary">
+                <Link href={whatsappLink(service.message)}>
+                  Solicitar orçamento
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           ))}
         </div>

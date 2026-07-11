@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Logo } from "@/components/logo"
-import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook } from "lucide-react"
+import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook, ShieldCheck, Building2 } from "lucide-react"
+import { siteConfig } from "@/lib/site"
 
 const quickLinks = [
   { href: "#servicos", label: "Serviços" },
@@ -79,15 +80,23 @@ export default function Footer() {
             <ul className="flex flex-col gap-3 text-sm text-white/70">
               <li className="flex items-start gap-2.5">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span>Av. Central, 1500 - Centro, Goiânia - GO</span>
+                <span>{siteConfig.address}</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="h-4 w-4 shrink-0 text-primary" />
-                <span>(62) 3000-0000</span>
+                <span>{siteConfig.phone}</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="h-4 w-4 shrink-0 text-primary" />
-                <span>contato@nexxusengenharia.eng.br</span>
+                <span>{siteConfig.email}</span>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <ShieldCheck className="h-4 w-4 shrink-0 text-primary" />
+                <span>{siteConfig.crea}</span>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Building2 className="h-4 w-4 shrink-0 text-primary" />
+                <span>CNPJ {siteConfig.cnpj}</span>
               </li>
             </ul>
           </div>

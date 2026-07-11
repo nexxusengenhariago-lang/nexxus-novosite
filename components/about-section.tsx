@@ -1,4 +1,6 @@
 import Image from "next/image"
+import { BadgeCheck } from "lucide-react"
+import { siteConfig } from "@/lib/site"
 
 const stats = [
   { value: "15+", label: "Anos de experiência" },
@@ -48,6 +50,37 @@ export function AboutSection() {
                   <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
+          <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start">
+            <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-xl border border-border">
+              <Image
+                src="/images/responsavel-tecnico.png"
+                alt={`Foto de ${siteConfig.responsavelTecnico.name}, responsável técnico da Nexxus Engenharia`}
+                fill
+                className="object-cover"
+                sizes="112px"
+              />
+            </div>
+            <div className="flex flex-col gap-2 text-center sm:text-left">
+              <div className="flex flex-col items-center gap-1 sm:flex-row sm:items-center sm:gap-3">
+                <h3 className="text-xl font-bold text-foreground">{siteConfig.responsavelTecnico.name}</h3>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                  <BadgeCheck className="h-3.5 w-3.5" />
+                  {siteConfig.responsavelTecnico.crea}
+                </span>
+              </div>
+              <p className="text-sm font-medium text-muted-foreground">
+                {siteConfig.responsavelTecnico.title} · Engenharia Civil
+              </p>
+              <p className="text-pretty text-sm leading-relaxed text-muted-foreground">
+                Engenheiro civil com mais de 15 anos de experiência em projetos estruturais, regularização de imóveis e
+                perícias técnicas. Responsável por conduzir cada projeto com rigor normativo (ABNT) e total conformidade
+                legal, assinando tecnicamente todos os trabalhos entregues pela Nexxus.
+              </p>
             </div>
           </div>
         </div>

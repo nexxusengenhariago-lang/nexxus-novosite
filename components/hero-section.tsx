@@ -1,7 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ShieldCheck, Award, Clock } from "lucide-react"
+import { ArrowRight, CalendarClock, BadgeCheck, MapPin } from "lucide-react"
+import { siteConfig, whatsappLink } from "@/lib/site"
 
 export function HeroSection() {
   return (
@@ -25,10 +26,14 @@ export function HeroSection() {
               Da concepção do projeto ao acompanhamento da obra, a Nexxus Engenharia entrega resultados com rigor
               técnico, segurança e total conformidade legal para transformar a sua visão em estruturas sólidas.
             </p>
+            <p className="max-w-xl text-pretty text-sm font-medium leading-relaxed text-white/90 md:text-base">
+              Projetos de engenharia, alvarás e regularização, perícias, vistorias e acompanhamento de obras em{" "}
+              <span className="text-primary">{siteConfig.region}</span>.
+            </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button size="lg" asChild>
-                <Link href="#projetos">
-                  Conheça nossos Projetos
+                <Link href={whatsappLink("Olá! Gostaria de solicitar um orçamento com a Nexxus Engenharia.")}>
+                  Solicitar orçamento no WhatsApp
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -38,22 +43,22 @@ export function HeroSection() {
                 asChild
                 className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white"
               >
-                <Link href="#contato">Fale com um Especialista</Link>
+                <Link href="#projetos">Conheça nossos projetos</Link>
               </Button>
             </div>
 
             <div className="mt-4 flex flex-wrap gap-x-8 gap-y-4">
               <div className="flex items-center gap-2 text-sm text-white/80">
-                <ShieldCheck className="h-5 w-5 text-primary" />
-                Segurança certificada
+                <CalendarClock className="h-5 w-5 text-primary" />
+                +15 anos de experiência
               </div>
               <div className="flex items-center gap-2 text-sm text-white/80">
-                <Award className="h-5 w-5 text-primary" />
-                {"+200 projetos entregues"}
+                <BadgeCheck className="h-5 w-5 text-primary" />
+                Responsável técnico {siteConfig.crea}
               </div>
               <div className="flex items-center gap-2 text-sm text-white/80">
-                <Clock className="h-5 w-5 text-primary" />
-                Prazos garantidos
+                <MapPin className="h-5 w-5 text-primary" />
+                {siteConfig.region}
               </div>
             </div>
           </div>
