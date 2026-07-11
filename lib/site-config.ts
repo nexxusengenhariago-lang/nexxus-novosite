@@ -3,7 +3,7 @@ export const siteConfig = {
   phoneDisplay: "(62) 9 9643-9366",
   whatsappNumber: "5562996439366",
   whatsappMessage: "Olá! Gostaria de solicitar um orçamento com a Nexxus Engenharia.",
-  email: "contato@nexxusengenharia.eng.br,
+  email: "contato@nexxusengenharia.eng.br",
   address: "Edifício Office Flamboyant — Av. Dep. Jamel Cecílio, 3310, Sala 301, Jardim Goiás — Goiânia/GO",
   region: "Goiânia, Aparecida de Goiânia, e Região Metropolitana",
   crea: "CREA 1017786453D-GO",
