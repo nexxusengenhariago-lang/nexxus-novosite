@@ -14,10 +14,10 @@ export function Logo({ asLink = true, variant = "default" }: LogoProps) {
       <Image
         src="/images/nexxus-logo.png"
         alt="Nexxus Engenharia"
-        width={150}
-        height={140}
+        width={220}
+        height={200}
         priority
-        className="h-11 w-auto object-contain"
+        className="h-16 w-auto object-contain md:h-20"
       />
     </span>
   )
