@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Branco / cinza claro de fundo */
+    --background: 210 20% 98%;
+    --foreground: 217 33% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 217 33% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 33% 17%;
+    /* Azul elétrico de destaque */
+    --primary: 214 95% 48%;
+    --primary-foreground: 0 0% 100%;
+    /* Azul marinho */
+    --secondary: 217 55% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 214 20% 94%;
+    --muted-foreground: 215 16% 42%;
+    --accent: 214 90% 96%;
+    --accent-foreground: 214 95% 40%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 214 95% 48%;
+    --radius: 0.75rem;
+    --chart-1: 214 95% 48%;
+    --chart-2: 217 55% 20%;
+    /* Azul marinho profundo para seções escuras */
+    --navy: 217 60% 14%;
+    --navy-foreground: 210 40% 98%;
+  }
+
+  .dark {
+    --background: 217 45% 8%;
+    --foreground: 210 40% 98%;
+    --card: 217 42% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217 42% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 214 95% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 40% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 70%;
+    --accent: 217 40% 20%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 214 95% 55%;
+    --chart-1: 214 95% 55%;
+    --chart-2: 210 40% 80%;
+    --navy: 217 60% 8%;
+    --navy-foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.line-numbers {
+  counter-reset: line;
+}
+
+.line-numbers code::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Grid patterns for hero section */
+.bg-grid-pattern-light {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-grid-pattern-dark {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Improve card consistency */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Improve focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Improve button transitions */
+.button {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Glassmorphism sutil para os cards */
+.glass-card {
+  background: hsl(var(--card) / 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border) / 0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px hsl(var(--secondary) / 0.18);
+  border-color: hsl(var(--primary) / 0.4);
+}
+
+/* Padrão de grade técnico para seções escuras */
+.bg-blueprint {
+  background-image: linear-gradient(to right, hsl(0 0% 100% / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(0 0% 100% / 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
