@@ -34,7 +34,7 @@ export function AdvantagesSection() {
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-primary">Vantagens</span>
           <h2 className="mt-2 text-balance text-3xl font-bold tracking-tight md:text-4xl">
-            Por que escolher a Carvalho Engenharia
+            Por que escolher a Nexxus Engenharia
           </h2>
           <p className="mt-3 text-pretty text-muted-foreground">
             Combinamos experiência, tecnologia e compromisso para entregar resultados que superam expectativas.

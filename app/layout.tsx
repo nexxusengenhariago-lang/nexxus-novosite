@@ -10,7 +10,7 @@ import { AuthProvider } from "@/contexts/auth-context"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Carvalho Engenharia | Soluções de Engenharia de Alta Performance",
+  title: "Nexxus Engenharia | Soluções de Engenharia de Alta Performance",
   description:
     "Projetos de engenharia, alvarás e regularização, perícias e vistorias e acompanhamento de obras com precisão técnica e excelência.",
   generator: "v0.app",

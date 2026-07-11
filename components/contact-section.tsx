@@ -37,7 +37,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">E-mail</div>
-                  <div className="font-medium text-foreground">contato@carvalhoengenharia.com.br</div>
+                  <div className="font-medium text-foreground">contato@nexxusengenharia.eng.br</div>
                 </div>
               </div>
               <div className="flex items-center gap-4">
