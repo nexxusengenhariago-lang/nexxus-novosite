@@ -1,8 +1,10 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Phone, Mail, MapPin } from "lucide-react"
+import { Phone, Mail, MapPin, MessageCircle } from "lucide-react"
+import { siteConfig, getWhatsAppLink } from "@/lib/site-config"
 
 export function ContactSection() {
   return (
@@ -21,6 +23,13 @@ export function ContactSection() {
               </p>
             </div>
 
+            <Button size="lg" asChild className="w-fit">
+              <Link href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="mr-2 h-4 w-4" />
+                Chamar no WhatsApp
+              </Link>
+            </Button>
+
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-4">
                 <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -28,7 +37,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Telefone</div>
-                  <div className="font-medium text-foreground">(62) 3000-0000</div>
+                  <div className="font-medium text-foreground">{siteConfig.phoneDisplay}</div>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -37,7 +46,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">E-mail</div>
-                  <div className="font-medium text-foreground">contato@nexxusengenharia.eng.br</div>
+                  <div className="font-medium text-foreground">{siteConfig.email}</div>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -46,7 +55,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Endereço</div>
-                  <div className="font-medium text-foreground">Av. Central, 1500 - Centro, Goiânia - GO</div>
+                  <div className="font-medium text-foreground">{siteConfig.address}</div>
                 </div>
               </div>
             </div>

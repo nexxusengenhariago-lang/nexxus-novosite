@@ -8,8 +8,9 @@ import { Menu } from "lucide-react"
 import { Logo } from "@/components/logo"
 
 const navLinks = [
+  { href: "#regularizacao", label: "Regularização" },
   { href: "#servicos", label: "Serviços" },
-  { href: "#vantagens", label: "Vantagens" },
+  { href: "#depoimentos", label: "Depoimentos" },
   { href: "#quem-somos", label: "Quem Somos" },
   { href: "#contato", label: "Contato" },
 ]

@@ -1,12 +1,13 @@
 import Link from "next/link"
 import { Logo } from "@/components/logo"
 import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook } from "lucide-react"
+import { siteConfig } from "@/lib/site-config"
 
 const quickLinks = [
+  { href: "#regularizacao", label: "Regularização" },
   { href: "#servicos", label: "Serviços" },
-  { href: "#vantagens", label: "Vantagens" },
+  { href: "#depoimentos", label: "Depoimentos" },
   { href: "#quem-somos", label: "Quem Somos" },
-  { href: "#projetos", label: "Projetos" },
   { href: "#contato", label: "Contato" },
 ]
 
@@ -79,15 +80,15 @@ export default function Footer() {
             <ul className="flex flex-col gap-3 text-sm text-white/70">
               <li className="flex items-start gap-2.5">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span>Av. Central, 1500 - Centro, Goiânia - GO</span>
+                <span>{siteConfig.address}</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="h-4 w-4 shrink-0 text-primary" />
-                <span>(62) 3000-0000</span>
+                <span>{siteConfig.phoneDisplay}</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="h-4 w-4 shrink-0 text-primary" />
-                <span>contato@nexxusengenharia.eng.br</span>
+                <span>{siteConfig.email}</span>
               </li>
             </ul>
           </div>
@@ -95,7 +96,8 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
           <p className="text-xs text-white/60">
-            &copy; {new Date().getFullYear()} Nexxus Engenharia. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Nexxus Engenharia. Todos os direitos reservados. · {siteConfig.crea} ·
+            CNPJ: {siteConfig.cnpj}
           </p>
           <div className="flex items-center gap-6 text-xs text-white/60">
             <Link href="#" className="transition-colors hover:text-primary">
