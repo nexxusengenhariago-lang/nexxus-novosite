@@ -1,10 +1,41 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ShieldCheck, MapPin, Clock } from "lucide-react"
 import { siteConfig, getWhatsAppLink } from "@/lib/site-config"
 
+const heroImages = [
+  {
+    src: "/images/hero-residencial.jpg",
+    alt: "Residência de alto padrão com projeto e acompanhamento de obra da Nexxus Engenharia",
+  },
+  {
+    src: "/images/project-residencial-1.jpg",
+    alt: "Sobrado residencial finalizado pela Nexxus Engenharia",
+  },
+  {
+    src: "/images/project-comercial-1.jpg",
+    alt: "Galpão comercial construído e regularizado pela Nexxus Engenharia",
+  },
+  {
+    src: "/images/project-comercial-2.jpg",
+    alt: "Galpão industrial com estrutura metálica executado pela Nexxus Engenharia",
+  },
+]
+
 export function HeroSection() {
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % heroImages.length)
+    }, 4500)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="relative overflow-hidden bg-[hsl(var(--navy))] text-[hsl(var(--navy-foreground))]">
       <div className="absolute inset-0 bg-blueprint opacity-60" aria-hidden="true" />
@@ -65,14 +96,34 @@ export function HeroSection() {
 
           <div className="relative">
             <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10 shadow-2xl lg:aspect-[4/5]">
-              <Image
-                src="/images/hero-residencial.jpg"
-                alt="Residência de alto padrão com projeto e acompanhamento de obra da Nexxus Engenharia"
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+              {heroImages.map((image, index) => (
+                <Image
+                  key={image.src}
+                  src={image.src || "/placeholder.svg"}
+                  alt={image.alt}
+                  fill
+                  priority={index === 0}
+                  className={`object-cover transition-opacity duration-1000 ease-in-out ${
+                    index === activeIndex ? "opacity-100" : "opacity-0"
+                  }`}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              ))}
+
+              {/* Indicadores */}
+              <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+                {heroImages.map((image, index) => (
+                  <button
+                    key={image.src}
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    aria-label={`Mostrar imagem ${index + 1}`}
+                    className={`h-1.5 rounded-full transition-all ${
+                      index === activeIndex ? "w-6 bg-white" : "w-1.5 bg-white/40 hover:bg-white/60"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
