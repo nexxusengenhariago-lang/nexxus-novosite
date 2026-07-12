@@ -64,10 +64,10 @@ export function HeroSection() {
           </div>
 
           <div className="relative">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-white/10 shadow-2xl">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10 shadow-2xl lg:aspect-[4/5]">
               <Image
-                src="/images/hero-construction.png"
-                alt="Obra de engenharia civil moderna com estrutura em concreto e guindaste"
+                src="/images/hero-residencial.jpg"
+                alt="Residência de alto padrão com projeto e acompanhamento de obra da Nexxus Engenharia"
                 fill
                 priority
                 className="object-cover"
