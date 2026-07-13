@@ -4,7 +4,6 @@ import { RegularizationSection } from "@/components/regularization-section"
 import { FeatureSection } from "@/components/feature-section"
 import { AdvantagesSection } from "@/components/advantages-section"
 import { TrustStripSection } from "@/components/trust-strip-section"
-import { ProjectsSection } from "@/components/projects-section"
 import { AboutSection } from "@/components/about-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { CtaBanner } from "@/components/cta-banner"
@@ -19,7 +18,6 @@ export default function Home() {
       <FeatureSection />
       <AdvantagesSection />
       <TrustStripSection />
-      <ProjectsSection />
       <AboutSection />
       <TestimonialsSection />
       <CtaBanner />
