@@ -1,11 +1,10 @@
 import Image from "next/image"
 
-// ATENÇÃO: troque os dois arquivos placeholder-*.svg em /public/images pelas fotos reais.
 const photos = [
   {
-    src: "/images/placeholder-handshake.svg",
-    alt: "Aperto de mãos selando o acordo com a Nexxus Engenharia",
-    caption: "Um acordo simples, sem letras miúdas",
+    src: "/images/engenheiro-levantamento-campo.jpg",
+    alt: "Engenheiro da Nexxus fazendo o levantamento técnico em campo",
+    caption: "Levantamento técnico feito com precisão",
   },
   {
     src: "/images/project-residencial-2.jpg",
@@ -13,9 +12,9 @@ const photos = [
     caption: "Projeto aprovado, obra realizada",
   },
   {
-    src: "/images/placeholder-alvara-aprovado.svg",
-    alt: "Cliente recebendo o alvará aprovado",
-    caption: "Você só recebe boas notícias",
+    src: "/images/projeto-tecnico-aprovado.png",
+    alt: "Projeto técnico arquitetônico aprovado pela prefeitura",
+    caption: "Projeto técnico pronto para aprovação",
   },
 ]
 
