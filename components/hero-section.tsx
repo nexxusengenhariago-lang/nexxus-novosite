@@ -51,16 +51,24 @@ export function HeroSection() {
               Engenharia Civil de Precisão
             </span>
             <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
-              Soluções de Engenharia de Alta Performance
+              Seu alvará aprovado, sem você lidar com a burocracia
             </h1>
             <p className="max-w-xl text-pretty text-base leading-relaxed text-white/70 md:text-lg">
-              Da concepção do projeto ao acompanhamento da obra, a Nexxus Engenharia entrega resultados com rigor
-              técnico, segurança e total conformidade legal para transformar a sua visão em estruturas sólidas.
+              Cuidamos de toda a parte documental do seu projeto junto à Prefeitura — do levantamento à aprovação
+              final. Você não precisa entender de processo administrativo, filas ou pendências.
             </p>
             <p className="max-w-xl text-pretty text-sm leading-relaxed text-white/60 md:text-base">
-              Projetos de engenharia, alvarás e regularização, perícias, vistorias e acompanhamento de obras em{" "}
+              Projetos de engenharia, alvarás e regularização, perícias, vistorias e INSS de obras em{" "}
               <span className="font-medium text-primary">{siteConfig.region}</span>.
             </p>
+
+            <div className="flex w-fit items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2.5">
+              <ShieldCheck className="h-4 w-4 shrink-0 text-primary" />
+              <span className="text-sm font-medium text-white">
+                Pagamento dividido em 3 etapas — a última só sai quando o alvará é aprovado.
+              </span>
+            </div>
+
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button size="lg" asChild>
                 <Link href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">
@@ -74,7 +82,7 @@ export function HeroSection() {
                 asChild
                 className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white"
               >
-                <Link href="#projetos">Conheça nossos projetos</Link>
+                <Link href="#como-funciona">Ver como funciona</Link>
               </Button>
             </div>
 
