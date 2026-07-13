@@ -3,24 +3,24 @@ import { Star } from "lucide-react"
 const testimonials = [
   {
     name: "Cliente Residencial",
-    role: "Regularização de imóvel",
+    role: "Alvará de construção",
     rating: 5,
     quote:
-      "Substitua por um depoimento real de cliente. Ex.: processo de regularização conduzido com transparência e agilidade do início ao fim.",
+      "Substitua por um depoimento real de cliente. Ex.: eu não fazia ideia de quantos documentos a prefeitura pedia — a Nexxus assumiu tudo e só me avisava quando precisava assinar algo.",
   },
   {
     name: "Cliente Comercial",
-    role: "Alvará de funcionamento",
+    role: "Aprovação de projeto",
     rating: 5,
     quote:
-      "Substitua por um depoimento real de cliente. Ex.: equipe atenciosa, prazo cumprido e comunicação clara em cada etapa do projeto.",
+      "Substitua por um depoimento real de cliente. Ex.: o que mais me convenceu foi só pagar a última parte quando o alvará saiu de fato — o risco ficou com eles, não comigo.",
   },
   {
     name: "Cliente Incorporador",
-    role: "Projeto estrutural",
+    role: "Regularização de imóvel",
     rating: 5,
     quote:
-      "Substitua por um depoimento real de cliente. Ex.: rigor técnico e domínio das normas fizeram toda a diferença na aprovação do projeto.",
+      "Substitua por um depoimento real de cliente. Ex.: já tinha tentado resolver sozinho e travei em pendências. Com a Nexxus, em poucas semanas o processo estava andando.",
   },
 ]
 

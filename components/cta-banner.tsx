@@ -11,11 +11,11 @@ export function CtaBanner() {
           <div className="max-w-xl">
             <span className="text-xs font-semibold uppercase tracking-wider text-primary">Avaliação gratuita</span>
             <h3 className="mt-2 text-balance text-2xl font-bold tracking-tight md:text-3xl">
-              Não sabe se o seu imóvel precisa de regularização?
+              Não sabe se o seu caso se encaixa no pagamento por etapa?
             </h3>
             <p className="mt-3 text-pretty text-muted-foreground">
-              Solicite uma avaliação gratuita da situação do seu imóvel. Analisamos a documentação e a obra e
-              indicamos o caminho mais rápido para a regularização — sem compromisso.
+              Solicite uma avaliação gratuita da situação do seu imóvel ou projeto. Analisamos o caso e explicamos
+              exatamente como funcionariam as 3 etapas de pagamento no seu processo — sem compromisso.
             </p>
           </div>
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
