@@ -15,6 +15,7 @@ import {
   Clock,
   AlertTriangle,
   Ruler,
+  MapPin,
 } from "lucide-react"
 
 const situations = [
@@ -44,16 +45,16 @@ const situations = [
   },
   {
     icon: CalendarClock,
-    title: "Sua construção é anterior a 19/10/1995?",
+    title: "Sua construção é antiga e nunca teve alvará?",
     description:
-      "Imóveis construídos até essa data podem ser regularizados pelo Alvará de Aceite, um processo mais simples. Comprovamos a época da construção e cuidamos de toda a documentação junto à Prefeitura.",
+      "Imóveis construídos há mais tempo podem ser regularizados pelo Alvará de Aceite, um processo mais simples. A data de corte varia entre Goiânia e Aparecida de Goiânia — veja qual se aplica ao seu caso.",
     modalKey: "aceite",
   },
   {
     icon: FileCheck2,
-    title: "Sua construção é posterior a 19/10/1995?",
+    title: "Sua construção é recente e está em desacordo com o projeto?",
     description:
-      "Edificações levantadas após essa data e sem alvará, ou em desacordo com o Plano Diretor, são regularizadas pelo Alvará de Regularização. Cuidamos do levantamento arquitetônico, ART e todo o processo.",
+      "Edificações mais novas, sem alvará ou em desacordo com o Plano Diretor, são regularizadas pelo Alvará de Regularização. Cuidamos do levantamento técnico, ART e todo o processo.",
     modalKey: "regularizacao",
   },
   {
@@ -70,101 +71,164 @@ const situations = [
   },
 ]
 
+type CityKey = "goiania" | "aparecida"
+
+const cityLabels: Record<CityKey, string> = {
+  goiania: "Goiânia",
+  aparecida: "Aparecida de Goiânia",
+}
+
 const modalContent = {
   aceite: {
     title: "Alvará de Aceite",
-    subtitle: "Para construções realizadas até 19/10/1995",
-    intro:
-      "Criado pela Lei Complementar nº 314/2018 do município de Goiânia, o Alvará de Aceite é o caminho mais simples e rápido para regularizar imóveis antigos, já que a legislação urbanística vigente na época era mais flexível.",
-    sections: [
-      {
-        icon: FileText,
-        heading: "Documentos exigidos",
-        items: [
-          "Comprovação da época da construção (conta de luz, água, IPTU antigo, foto aérea ou declaração)",
-          "Croqui simplificado do imóvel (dispensa projeto de arquitetura completo em edificações de até 200 m²)",
-          "Cópia da matrícula ou escritura do imóvel",
-          "Documentos pessoais do proprietário e, se houver, do responsável técnico",
+    tagline: "O caminho mais simples para regularizar construções mais antigas",
+    byCity: {
+      goiania: {
+        marco: "Construções concluídas até 19/10/1995",
+        lei: "Regulamentado pela Lei Complementar nº 314/2018 (Prefeitura de Goiânia), com base na Lei Orgânica do Município.",
+        sections: [
+          {
+            icon: FileText,
+            heading: "Documentos exigidos",
+            items: [
+              "Comprovação da época da construção (foto aérea, IPTU antigo, conta de luz/água antiga ou outro documento idôneo)",
+              "Croqui simplificado do imóvel para edificações menores, dispensando projeto de arquitetura completo",
+              "Cópia da matrícula ou escritura do imóvel",
+              "Certidão de remembramento, desmembramento ou remanejamento, caso o imóvel ocupe mais de um lote",
+            ],
+          },
+          {
+            icon: Ruler,
+            heading: "Pontos de atenção",
+            items: [
+              "O Alvará de Aceite é concedido uma única vez por imóvel",
+              "Não é concedido para construções que obstruam área pública, logradouro ou Área de Preservação Permanente (APP)",
+              "Imóveis em áreas aeroportuárias dependem de autorização prévia do Departamento de Aviação Civil",
+            ],
+          },
+          {
+            icon: AlertTriangle,
+            heading: "Custas",
+            items: [
+              "Como a construção é anterior à legislação vigente, normalmente não há multa por irregularidade em si",
+              "Incidem apenas as taxas administrativas do processo junto à Seplanh",
+            ],
+          },
         ],
       },
-      {
-        icon: Ruler,
-        heading: "Quando o processo é ainda mais simples",
-        items: [
-          "Até 200 m² de área construída: dispensa projeto de arquitetura, bastando um croqui",
-          "Acima de 200 m²: é necessário levantamento arquitetônico completo com ART",
+      aparecida: {
+        marco: "Construções concluídas com data anterior a 09/10/2018",
+        lei: "Previsto no Código de Obras e Edificações do Município (Lei Complementar nº 171/2019, art. 80), que atualizou a LC 105/2015.",
+        sections: [
+          {
+            icon: FileText,
+            heading: "Documentos exigidos",
+            items: [
+              "Certidão de uso do solo",
+              "Projeto de levantamento em escala mínima de 1:100, com elevação da fachada frontal indicando o nome da via",
+              "Documento idôneo que comprove a existência e a época da edificação",
+            ],
+          },
+          {
+            icon: Ruler,
+            heading: "Como o processo tramita",
+            items: [
+              "Solicitação feita pelo Portal Vapt Vupt ou diretamente na Secretaria de Planejamento e Regulação Urbana",
+              "Imóveis acima de 5.000 m² podem usar a tramitação híbrida prevista na Resolução CGPD nº 001/2025",
+            ],
+          },
+          {
+            icon: AlertTriangle,
+            heading: "Taxas",
+            items: [
+              "Receita 22590 — Alvará de Aceite: 16,00 UVFA/m² para a área em desacordo + 0,40 UVFA/m² para a área já em conformidade",
+              "Valor gerado após a análise técnica do processo pela Secretaria de Regulação Urbana",
+            ],
+          },
         ],
       },
-      {
-        icon: Clock,
-        heading: "Prazos",
-        items: [
-          "Análise inicial da prefeitura: costuma variar entre 30 e 60 dias, conforme demanda",
-          "Prazo pode ser maior se houver pendências fundiárias ou de documentação",
-        ],
-      },
-      {
-        icon: AlertTriangle,
-        heading: "Multas e custas",
-        items: [
-          "Como a construção é anterior à legislação atual, geralmente não há multa por irregularidade em si",
-          "Podem incidir apenas taxas administrativas do processo junto à prefeitura",
-        ],
-      },
-    ],
+    },
     footer:
-      "Cada caso tem particularidades. Fazemos uma avaliação inicial gratuita para confirmar se o seu imóvel se enquadra no Alvará de Aceite.",
+      "A data de corte é diferente em cada município. Fazemos uma avaliação inicial gratuita para confirmar se o seu imóvel se enquadra no Alvará de Aceite de Goiânia ou de Aparecida de Goiânia.",
   },
   regularizacao: {
     title: "Alvará de Regularização",
-    subtitle: "Para construções realizadas após 19/10/1995",
-    intro:
-      "Regido pela Lei Complementar nº 314/2018, o Alvará de Regularização se aplica a construções mais recentes que estão sem licença ou em desacordo com o Plano Diretor e o Código de Obras de Goiânia. O processo é mais completo, pois a legislação atual exige mais critérios técnicos.",
-    sections: [
-      {
-        icon: FileText,
-        heading: "Documentos exigidos",
-        items: [
-          "Levantamento arquitetônico completo da edificação (plantas atualizadas)",
-          "ART (Anotação de Responsabilidade Técnica) do profissional responsável",
-          "Cópia da matrícula ou escritura do imóvel",
-          "Comprovante de IPTU e documentos pessoais do proprietário",
-          "Consulta prévia de viabilidade junto à Prefeitura, quando exigida",
+    tagline: "Para construções mais recentes, sem alvará ou em desacordo com o projeto aprovado",
+    byCity: {
+      goiania: {
+        marco: "Edificações estruturalmente definidas após 19/10/1995, em desacordo com o Plano Diretor (LC 349/2022) e o Código de Obras (LC 364/2023)",
+        lei: "Instituído pela Lei Complementar nº 314/2018, com atualizações trazidas pelas LC 349/2022, LC 364/2023 e LC 368/2023.",
+        sections: [
+          {
+            icon: FileText,
+            heading: "Documentos exigidos",
+            items: [
+              "Levantamento arquitetônico completo (plantas e elevações atualizadas)",
+              "ART do responsável técnico",
+              "Imagem de cobertura do imóvel via Google Earth com data compatível, ou documento equivalente que comprove a edificação",
+              "Certidão de remembramento, desmembramento ou remanejamento, se o imóvel ocupar mais de um lote",
+            ],
+          },
+          {
+            icon: Ruler,
+            heading: "Critérios técnicos",
+            items: [
+              "Só podem ser regularizados imóveis com até 7 pavimentos e altura máxima de 21 metros",
+              "Edificações acima de 250 m² que não ocupem toda a área do terreno precisam de poço de infiltração ou caixa de recarga para permeabilidade do solo",
+              "Não é concedido para construções em vias não oficializadas sem prévia regularização do parcelamento do solo, nem em áreas que obstruam logradouro público ou APP",
+            ],
+          },
+          {
+            icon: AlertTriangle,
+            heading: "Multas e taxas",
+            items: [
+              "Cobrança composta por taxa de aprovação de projetos + multa formal por descumprimento do Plano Diretor e Código de Obras",
+              "Para área entre 200 m² e 500 m², a multa formal de ofício corresponde a 400% do valor da taxa de aprovação de projetos",
+              "Áreas de até 200 m² podem ter isenção da multa em situações específicas, como imóveis de Planta Popular ou localizados em Áreas Especiais de Interesse Social (AEIS I e II)",
+            ],
+          },
         ],
       },
-      {
-        icon: Ruler,
-        heading: "Adequação ao Plano Diretor",
-        items: [
-          "A edificação é analisada quanto a recuos, taxa de ocupação, gabarito (altura/pavimentos) e área permeável",
-          "Pode ser necessário ajuste no projeto para atender aos parâmetros vigentes",
+      aparecida: {
+        marco: "Construções posteriores a 09/10/2018, em desacordo com o Código de Obras e Edificações (LC 171/2019) e a Lei de Uso e Ocupação do Solo",
+        lei: "Regido pela Lei Complementar nº 171/2019 (Código de Obras e Edificações de Aparecida de Goiânia).",
+        sections: [
+          {
+            icon: FileText,
+            heading: "Documentos exigidos",
+            items: [
+              "Certidão de uso do solo",
+              "Projeto de levantamento em escala mínima de 1:100, com elevação da fachada frontal",
+              "Documentação que comprove a existência da edificação, conforme exigido pelo Código de Obras",
+            ],
+          },
+          {
+            icon: Ruler,
+            heading: "Como o processo tramita",
+            items: [
+              "Análise feita pela Secretaria de Planejamento e Regulação Urbana, com possibilidade de protocolo pelo Portal Vapt Vupt",
+              "Imóveis acima de 5.000 m² podem seguir o rito de tramitação híbrida da Resolução CGPD nº 001/2025",
+            ],
+          },
+          {
+            icon: AlertTriangle,
+            heading: "Taxas",
+            items: [
+              "Receita 22590: 16,00 UVFA/m² para a área em desacordo + 0,40 UVFA/m² para a área já em conformidade",
+              "Valor final apurado após análise técnica do processo",
+            ],
+          },
         ],
       },
-      {
-        icon: Clock,
-        heading: "Prazos",
-        items: [
-          "Análise técnica costuma levar entre 45 e 90 dias, a depender da complexidade",
-          "Processos com pendências de adequação ao Plano Diretor podem levar mais tempo",
-        ],
-      },
-      {
-        icon: AlertTriangle,
-        heading: "Multas e custas",
-        items: [
-          "Incide multa proporcional à área irregular construída, conforme tabela da Prefeitura de Goiânia",
-          "Quanto maior o tempo de irregularidade e a área construída, maior tende a ser o valor",
-          "É possível, em alguns casos, negociar parcelamento da multa junto ao município",
-        ],
-      },
-    ],
+    },
     footer:
-      "Fazemos o levantamento técnico completo e simulamos o valor estimado da multa antes de dar entrada no processo, para você decidir com segurança.",
+      "Fazemos o levantamento técnico completo e simulamos o custo estimado antes de dar entrada no processo, já considerando as regras específicas de Goiânia ou de Aparecida de Goiânia.",
   },
 }
 
 export function RegularizationSection() {
   const [openModal, setOpenModal] = useState<keyof typeof modalContent | null>(null)
+  const [activeCity, setActiveCity] = useState<CityKey>("goiania")
 
   return (
     <section id="regularizacao" className="scroll-mt-16 bg-muted/40 py-16 md:py-24">
@@ -175,7 +239,8 @@ export function RegularizationSection() {
             Seu imóvel se enquadra em alguma dessas situações?
           </h2>
           <p className="mt-3 text-pretty text-muted-foreground">
-            Situações irregulares têm solução. Veja os casos mais comuns que atendemos e como resolvemos cada um.
+            Situações irregulares têm solução. Veja os casos mais comuns que atendemos em Goiânia e Aparecida de
+            Goiânia, e como resolvemos cada um.
           </p>
         </div>
 
@@ -188,7 +253,14 @@ export function RegularizationSection() {
               <Wrapper
                 key={item.title}
                 type={isClickable ? "button" : undefined}
-                onClick={isClickable ? () => setOpenModal(item.modalKey as keyof typeof modalContent) : undefined}
+                onClick={
+                  isClickable
+                    ? () => {
+                        setActiveCity("goiania")
+                        setOpenModal(item.modalKey as keyof typeof modalContent)
+                      }
+                    : undefined
+                }
                 className={`glass-card flex flex-col gap-3 rounded-xl p-6 text-left ${
                   isClickable ? "cursor-pointer transition hover:-translate-y-0.5 hover:shadow-lg" : ""
                 }`}
@@ -226,15 +298,42 @@ export function RegularizationSection() {
             </button>
 
             <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-              {modalContent[openModal].subtitle}
+              {modalContent[openModal].tagline}
             </span>
             <h3 className="mt-1 text-2xl font-bold tracking-tight text-foreground">
               {modalContent[openModal].title}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{modalContent[openModal].intro}</p>
+
+            {/* City tabs */}
+            <div className="mt-5 flex gap-2 rounded-lg bg-muted p-1">
+              {(Object.keys(cityLabels) as CityKey[]).map((city) => (
+                <button
+                  key={city}
+                  type="button"
+                  onClick={() => setActiveCity(city)}
+                  className={`flex flex-1 items-center justify-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium transition ${
+                    activeCity === city
+                      ? "bg-background text-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <MapPin className="h-3.5 w-3.5" />
+                  {cityLabels[city]}
+                </button>
+              ))}
+            </div>
+
+            <div className="mt-4 rounded-xl border border-primary/20 bg-primary/5 p-4">
+              <p className="text-sm font-semibold text-foreground">
+                {modalContent[openModal].byCity[activeCity].marco}
+              </p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                {modalContent[openModal].byCity[activeCity].lei}
+              </p>
+            </div>
 
             <div className="mt-6 flex flex-col gap-5">
-              {modalContent[openModal].sections.map((section) => (
+              {modalContent[openModal].byCity[activeCity].sections.map((section) => (
                 <div key={section.heading} className="rounded-xl border border-border bg-muted/30 p-4">
                   <div className="mb-2 flex items-center gap-2">
                     <section.icon className="h-4 w-4 text-primary" />
