@@ -1,4 +1,13 @@
-import { Wrench, Building2, Home, Banknote, EyeOff, Recycle, FileWarning, HelpCircle } from "lucide-react"
+import {
+  Wrench,
+  Building2,
+  Home,
+  Banknote,
+  CalendarClock,
+  FileCheck2,
+  FileWarning,
+  HelpCircle,
+} from "lucide-react"
 
 const situations = [
   {
@@ -26,16 +35,16 @@ const situations = [
       "Bancos exigem documentação regularizada para financiamento. Resolvemos averbação de construção, habite-se e escritura para venda ou refinanciamento sem entraves.",
   },
   {
-    icon: EyeOff,
-    title: "Muro avançou na calçada ou chanfro de esquina?",
+    icon: CalendarClock,
+    title: "Sua construção é anterior a 19/10/1995?",
     description:
-      "Muros fora do alinhamento são irregulares e impedem a regularização. Elaboramos o projeto de adequação e regularizamos a situação junto ao município.",
+      "Imóveis construídos até essa data podem ser regularizados pelo Alvará de Aceite, um processo mais simples. Comprovamos a época da construção e cuidamos de toda a documentação junto à Prefeitura.",
   },
   {
-    icon: Recycle,
-    title: "Imóvel sem área permeável ou fora dos recuos?",
+    icon: FileCheck2,
+    title: "Sua construção é posterior a 19/10/1995?",
     description:
-      "A legislação municipal exige recuos e área permeável mínima. Analisamos a situação, identificamos as adequações necessárias e conduzimos todo o processo.",
+      "Edificações levantadas após essa data e sem alvará, ou em desacordo com o Plano Diretor, são regularizadas pelo Alvará de Regularização. Cuidamos do levantamento arquitetônico, ART e todo o processo.",
   },
   {
     icon: FileWarning,
