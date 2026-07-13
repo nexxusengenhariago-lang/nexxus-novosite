@@ -13,10 +13,10 @@ export function AboutSection() {
       <div className="container px-4 md:px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="relative order-last lg:order-first">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border shadow-lg">
+            <div className="relative aspect-[3/4] max-w-md overflow-hidden rounded-xl border border-border shadow-lg lg:max-w-none">
               <Image
-                src="/images/project-commercial.png"
-                alt="Equipe de engenharia da Nexxus Engenharia em projeto"
+                src="/images/responsavel-tecnico.jpg"
+                alt="Responsável técnico da Nexxus Engenharia"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
