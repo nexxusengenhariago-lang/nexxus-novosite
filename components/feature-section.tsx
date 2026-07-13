@@ -1,29 +1,29 @@
-import { DraftingCompass, FileCheck, ClipboardCheck, HardHat } from "lucide-react"
+import { DraftingCompass, FileCheck, Receipt, ClipboardCheck } from "lucide-react"
 
 const services = [
   {
     icon: DraftingCompass,
-    title: "Projetos de Engenharia",
+    title: "Aprovação de Projetos",
     description:
-      "Projetos estruturais, arquitetônicos e complementares desenvolvidos com tecnologia BIM e precisão técnica.",
+      "Elaboramos e protocolamos seu projeto (estrutural, arquitetônico e complementares) já pensando nas exigências da prefeitura, evitando idas e vindas.",
   },
   {
     icon: FileCheck,
     title: "Alvarás e Regularização",
     description:
-      "Aprovação de projetos junto aos órgãos competentes, regularização de imóveis e emissão de documentação legal.",
+      "Aprovação de projetos junto aos órgãos competentes, regularização de imóveis e emissão de documentação legal — do início ao fim.",
+  },
+  {
+    icon: Receipt,
+    title: "INSS de Obras",
+    description:
+      "Cálculo, recolhimento e regularização fiscal da obra junto ao INSS, com toda a documentação necessária para emissão da CND.",
   },
   {
     icon: ClipboardCheck,
     title: "Perícias e Vistorias",
     description:
       "Laudos técnicos, perícias judiciais e vistorias detalhadas para garantir a segurança e conformidade das edificações.",
-  },
-  {
-    icon: HardHat,
-    title: "Acompanhamento de Obras",
-    description:
-      "Gerenciamento e fiscalização de obras com controle de cronograma, custos e qualidade em todas as etapas.",
   },
 ]
 
@@ -34,11 +34,11 @@ export function FeatureSection() {
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-primary">Nossos Serviços</span>
           <h2 className="mt-2 text-balance text-3xl font-bold tracking-tight md:text-4xl">
-            Pilares que sustentam cada projeto
+            A parte documental, resolvida por nós
           </h2>
           <p className="mt-3 text-pretty text-muted-foreground">
-            Atuamos em todo o ciclo da engenharia civil, oferecendo soluções completas e integradas para o seu
-            empreendimento.
+            Você não precisa aprender a lidar com prefeitura, INSS ou cartório. Assumimos essa parte para que
+            você só precise assinar e aprovar.
           </p>
         </div>
 

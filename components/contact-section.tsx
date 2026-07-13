@@ -18,8 +18,8 @@ export function ContactSection() {
                 Solicite seu orçamento
               </h2>
               <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
-                Preencha o formulário ou entre em contato pelos nossos canais. Nossa equipe responderá o mais breve
-                possível.
+                Preencha o formulário ou entre em contato pelos nossos canais. Explicamos como funcionam as 3
+                etapas de pagamento para o seu caso — sem compromisso.
               </p>
             </div>
 
@@ -79,7 +79,7 @@ export function ContactSection() {
               </div>
               <div className="flex flex-col gap-2">
                 <Label htmlFor="service">Serviço de interesse</Label>
-                <Input id="service" placeholder="Ex.: Projeto estrutural, regularização..." />
+                <Input id="service" placeholder="Ex.: Alvará, habite-se, INSS de obra, regularização..." />
               </div>
               <div className="flex flex-col gap-2">
                 <Label htmlFor="message">Mensagem</Label>

@@ -4,18 +4,18 @@ import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook } from "lucide-react
 import { siteConfig } from "@/lib/site-config"
 
 const quickLinks = [
+  { href: "#como-funciona", label: "Como Funciona" },
   { href: "#regularizacao", label: "Regularização" },
   { href: "#servicos", label: "Serviços" },
-  { href: "#depoimentos", label: "Depoimentos" },
   { href: "#quem-somos", label: "Quem Somos" },
   { href: "#contato", label: "Contato" },
 ]
 
 const services = [
-  "Projetos de Engenharia",
+  "Aprovação de Projetos",
   "Alvarás e Regularização",
+  "INSS de Obras",
   "Perícias e Vistorias",
-  "Acompanhamento de Obras",
 ]
 
 export default function Footer() {
@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <Logo asLink variant="light" />
             <p className="text-sm leading-relaxed text-white/70">
-              Soluções de engenharia de alta performance com precisão técnica, segurança e compromisso com prazos.
+              Alvarás, aprovações e regularização de imóveis — você só paga quando cada etapa é entregue.
             </p>
             <div className="flex items-center gap-3">
               <Link

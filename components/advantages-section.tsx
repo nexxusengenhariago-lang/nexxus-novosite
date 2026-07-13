@@ -2,8 +2,12 @@ import { CheckCircle2 } from "lucide-react"
 
 const advantages = [
   {
-    title: "Rigor Técnico",
-    description: "Equipe de engenheiros especializados com metodologia comprovada em cada entrega.",
+    title: "Pagamento por Etapa",
+    description: "Você paga conforme cada fase é entregue — a última parcela só sai com o alvará aprovado.",
+  },
+  {
+    title: "Zero Burocracia para Você",
+    description: "Cuidamos do contato com a prefeitura, INSS e cartório. Você só assina o que for necessário.",
   },
   {
     title: "Conformidade Legal",
@@ -11,19 +15,15 @@ const advantages = [
   },
   {
     title: "Transparência Total",
-    description: "Relatórios periódicos e comunicação clara em todas as fases do projeto.",
+    description: "Você acompanha em qual etapa o processo está, sem surpresas no meio do caminho.",
   },
   {
     title: "Prazos Garantidos",
     description: "Planejamento detalhado e gestão eficiente para cumprir cada cronograma.",
   },
   {
-    title: "Tecnologia de Ponta",
-    description: "Uso de softwares BIM e ferramentas modernas de modelagem e cálculo.",
-  },
-  {
-    title: "Segurança em Primeiro Lugar",
-    description: "Protocolos rígidos de segurança do trabalho em todos os canteiros de obra.",
+    title: "Responsabilidade Técnica",
+    description: "Engenheiro Civil com registro ativo no CREA, assinando cada projeto e laudo.",
   },
 ]
 
